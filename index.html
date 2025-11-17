@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tharun kumar - Portfolio</title>
+
+<link rel="icon" type="image/svg+xml"
+href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Crect width='100%25' height='100%25' rx='40' ry='40' fill='%230069ff'/%3E%3Ctext x='50%25' y='55%25' font-size='140' fill='white' font-family='Arial' text-anchor='middle' dominant-baseline='middle'%3ETK%3C/text%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+        @keyframes fadeSlide {
+      0% { opacity: 0; transform: translateY(25px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .fadeSlide {
+      animation: fadeSlide 1s ease-out forwards;
+    }
+    .skill-pill {
+     @apply flex items-center gap-2 px-4 py-1.5 bg-gray-100 text-gray-800
+           rounded-full text-sm font-semibold shadow-sm border border-gray-200;
+     }
+
+  @media (min-width:0px) {
+    .skill-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 1rem;
+      background-color: #f3f4f6; /* gray-100 */
+      color: #1f2937; /* gray-800 */
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      border: 1px solid #e5e7eb; /* gray-200 */
+    }
+  }
+  </style>
+</head>
+
+<body class="antialiased bg-gray-100 overflow-x-hidden"><!-- antialiased is for making the text smooth edges -->
+
+  <!-- Navbar -->
+  <nav class="fixed w-full z-40 top-0 left-0 transition-all backdrop-blur bg-white/60 shadow" id="navbar">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 lg:px-8">
+      <a href="#home" class="text-lg font-bold text-blue-700">TK</a>
+
+      <button class="lg:hidden flex items-center px-3 py-2 border rounded text-blue-700 border-blue-700 bg-white/40" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <ul class="hidden lg:flex space-x-8 font-medium text-gray-700">
+        <li><a href="#home" class="hover:text-blue-700">Home</a></li>
+        <li><a href="#about" class="hover:text-blue-700">About</a></li>
+        <li><a href="#projects" class="hover:text-blue-700">Projects</a></li>
+        <li><a href="#internships" class="hover:text-blue-700">Internships</a></li>
+        <li><a href="#contact" class="hover:text-blue-700">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden absolute top-full left-0 w-full bg-white/80 backdrop-blur-lg px-8 py-4 shadow-lg z-50">
+      <ul class="space-y-4 font-medium text-gray-700">
+        <li><a href="#home" class="block hover:text-blue-700">Home</a></li><!--display:block refers to take full width of his parent element and starts in new line and easy to apply w,h,m,p -->
+        <li><a href="#about" class="block hover:text-blue-700">About</a></li>
+        <li><a href="#projects" class="block hover:text-blue-700">Projects</a></li>
+        <li><a href="#internships" class="block hover:text-blue-700">Internships</a></li>
+        <li><a href="#contact" class="block hover:text-blue-700">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+<!--Hero section-->
+  <section id="home" class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white px-6 py-20">
+  <!--br means bottom to right have background gardient start with blue and end with pink and though purple color, px,py is for padding x refers to left and right and y refers to top and bottom-->
+  <p class="text-lg md:text-xl mb-3 opacity-90 text-center">Welcome to my portfolio</p>
+  <!--text lg means large text(18px) md refers to medium screens has text-xl refers to extra large(20px) and margin bottom has 3px,opacity has 90 which makes more visible-->
+  <h1 class="text-5xl md:text-6xl font-extrabold mb-3 text-center">Tharun Kumar</h1>
+  <h2 class="text-2xl md:text-3xl font-semibold mb-3 text-center">Full Stack Developer</h2>
+  <p class="text-lg md:text-xl mb-10 text-center max-w-xl opacity-90">Building digital experiences that make a difference</p>
+  <div class="flex flex-col md:flex-row gap-4 w-full max-w-md">
+    <!--display flex and flex inside elements in columns and for medium and above screens flex that element in rows-->
+  <a href="#projects" class="flex-1 bg-white text-purple-700 font-semibold py-4 rounded-full text-center shadow-lg hover:bg-gray-100 transition text-lg">View My Work</a>
+  <a href="#contact" class="flex-1 border-2 border-white text-white font-semibold py-4 rounded-full text-center hover:bg-white hover:text-purple-700 transition text-lg">Contact Me</a>
+  </div>
+  <div class="flex flex-col md:flex-row gap-4 w-full max-w-md mt-10">
+  <a href="resume.pdf" download class="flex-1 border-2 border-white text-white font-semibold py-4 rounded-full text-center hover:bg-white hover:text-purple-700 transition text-lg backdrop-blur"><i class="fas fa-download"></i> Resume</a>
+  </div>
+  <!--for down arrow symbol-->
+  <div class="mt-12 animate-bounce text-3xl opacity-80">
+    <i class="fas fa-chevron-down"></i>
+  </div>
+  </section>
+<!--Hero section-->
+<!--about section-->
+<section id="about" class="py-20 px-6">
+  <div class="max-w-6xl mx-auto">
+  
+    <div class="grid grid-cols-1 md:grid-cols-10 gap-8 items-center">
+
+      
+      <div class="md:col-span-3 flex justify-center md:justify-start">
+        <img
+          src="image.png"
+          alt="Profile Photo"
+          class="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover shadow-xl border-4 border-blue-200"
+        />
+        
+      </div>
+
+      <!-- CONTENT (70% on md+) -->
+      <div class="md:col-span-7 space-y-5">
+        <h3 class="text-3xl md:text-4xl font-bold text-gray-900">About Me</h3>
+
+        <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+          I’m a passionate Full Stack Developer focused on building responsive,
+          user-friendly, and clean digital experiences. I believe in writing
+          efficient, maintainable code and bringing ideas to life through modern
+          technologies and thoughtful design.
+        </p>
+
+        <!-- SKILLS TITLE -->
+        <h4 class="text-lg font-semibold text-gray-900 mt-2">Skills</h4>
+
+  
+        <div class="flex flex-wrap gap-3 mt-2">
+          <span class="skill-pill"><i class="fa-brands fa-html5 text-orange-600"></i> HTML5</span>
+          <span class="skill-pill"><i class="fa-brands fa-css3-alt text-blue-600"></i> CSS3</span>
+          <span class="skill-pill"><i class="fa-brands fa-js text-yellow-500"></i> JavaScript</span>
+          <span class="skill-pill"><i class="fa-solid fa-database text-blue-700"></i> SQL</span>
+          <span class="skill-pill"><i class="fa-solid fa-leaf text-green-700"></i> MongoDB</span>
+          <span class="skill-pill"><i class="fa-brands fa-git-alt text-red-500"></i> Git</span>
+          <span class="skill-pill"><i class="fa-brands fa-github text-black"></i> GitHub</span>
+          <span class="skill-pill"><i class="fa-solid fa-wind text-blue-500"></i> Tailwind CSS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--About section-->
+
+<!--education section-->
+<!-- EDUCATION (aligned under description) -->
+<section class="py-6 px-6">
+  <div class="max-w-6xl mx-auto">
+    
+    <div class="grid grid-cols-1 md:grid-cols-10">
+      
+      <!-- Empty space equal to image column (3/10) -->
+      <div class="hidden md:block md:col-span-3"></div>
+
+      <!-- Education card matches right-side width (7/10) -->
+      <div class="md:col-span-7">
+        <div class="bg-white shadow-xl rounded-2xl p-8 border border-gray-100">
+
+          <h2 class="text-2xl font-bold text-gray-900 mb-6">🎓 Education</h2>
+
+          <div class="space-y-6">
+
+            <div class="border-l-4 border-blue-500 pl-4">
+              <h3 class="text-lg font-semibold text-gray-800">Bachelor of Technology (B.Tech)</h3>
+              <p class="text-gray-600">Computer Science & Engineering</p>
+              <p class="text-gray-500">Santhiram engineering college(SREC), Nandyal.</p>
+              <p class="font-medium text-gray-800">2022 – 2026</p>
+            </div>
+
+            <div class="border-l-4 border-blue-500 pl-4">
+              <h3 class="text-lg font-semibold text-gray-800">Intermediate / 12th Standard</h3>
+              <p class="text-gray-600">MPC – Board of Intermediate Education</p>
+              <p class="text-gray-500">Rao's Jr. college, Nandyal.</p>
+              <p class="font-medium text-gray-800">2019 – 2021</p>
+            </div>
+
+            <div class="border-l-4 border-blue-500 pl-4">
+              <h3 class="text-lg font-semibold text-gray-800">10th Standard (SSC)</h3>
+              <p class="text-gray-600">AP State Board</p>
+              <p class="text-gray-500">Master Public High School, Nandyal.</p>
+              <p class="font-medium text-gray-800">2018 – 2019</p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!--education section-->
+
+<!--projects section-->
+  <section id="projects" class="max-w-7xl mx-auto py-20 px-4 md:px-8">
+    <h3 class="text-3xl font-bold mb-8 text-gray-800 text-center">Projects</h3>
+
+    <div class="grid gap-8 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+
+      <!-- Project 1 -->
+      <div class="bg-white rounded-xl shadow-xl hover:scale-105 transform transition-all">
+        <img src="portfolio.png"
+          class="rounded-t-xl h-40 w-full object-cover">
+        <div class="p-6">
+          <h4 class="font-bold text-xl mb-2 text-blue-700">Portfolio website</h4>
+          <p class="text-gray-600 mb-4">Designed and developed a fully responsive personal portfolio to showcase my academic background, projects, certifications, and internship experiences.
+The website features a clean layout with dedicated sections for About, Skills, Projects, and Contact.
+Built using HTML, CSS, TailwindCSS, and JavaScript, it ensures a smooth user experience across all screen sizes.
+This portfolio helps present my professional journey in a structured and visually engaging manner.</p>
+
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-lg text-sm">HTML</span>
+            <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-lg text-sm">CSS(Tailwindcss)</span>
+            <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-lg text-sm">JavaScript</span>
+          </div>
+
+          <div class="flex gap-3">
+            <a href="#" class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800">GitHub</a>
+            <a href="#" class="bg-gray-100 text-blue-700 px-4 py-2 rounded hover:bg-blue-50">Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="bg-white rounded-xl shadow-xl hover:scale-105 transform transition-all">
+        <img src="smartsorting.png"
+          class="rounded-t-xl h-40 w-full object-cover">
+        <div class="p-6">
+          <h4 class="font-bold text-xl mb-2 text-blue-700">Smart sorting</h4>
+          <p class="text-gray-600 mb-4">This project focuses on building an AI-based classification system to detect rotten fruits and vegetables using Transfer Learning.
+I fine-tuned the VGG16 model on a custom dataset to achieve accurate binary predictions: Healthy vs Rotten.
+The system was integrated with a simple web interface for image upload and instant prediction results.
+This project was developed as part of the SmartInternz Virtual Internship,</p>
+
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-lg text-sm">Python</span>
+            <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-lg text-sm">TensorFlow</span>
+            <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-lg text-sm">Keras</span>
+            <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-lg text-sm">openCV</span>
+            <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-lg text-sm">Numpy</span>
+            <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-lg text-sm">Flask</span>
+            <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-lg text-sm">HTML</span>
+            <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-lg text-sm">CSS</span>
+          </div>
+
+          <div class="flex gap-3">
+            <a href="#" class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800">GitHub</a>
+            <a href="#" class="bg-gray-100 text-blue-700 px-4 py-2 rounded hover:bg-blue-50">Live Demo</a>
+          </div>
+        </div>
+      </div>
+</div>
+</section>
+<!--projects section-->
+
+<!--internship section-->
+<!-- Internships Section -->
+  <section id="internships" class="max-w-7xl mx-auto py-20 px-4 md:px-8">
+    <h3 class="text-3xl font-bold mb-8 text-gray-800 text-center">Internships</h3>
+
+    <div class="space-y-8">
+
+      <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col md:flex-row gap-6">
+        <div class="flex items-center justify-center md:w-1/4">
+          <i class="fas fa-building text-3xl text-blue-700"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg text-blue-700">Eduskills</h4>
+          <p class="font-semibold text-gray-700">Java Full Stack developer Virtual Internship</p>
+          <p class="text-sm text-gray-600 mb-1">Jul 2024 - sep 2024</p>
+          <p class="text-gray-600">Completed a beginner-friendly 10-week virtual internship where I learned the basics of Java full-stack development.
+Gained introductory knowledge of Java, Spring Boot, databases, and how web applications work.
+Worked on guided tasks that helped me understand API creation, simple backend logic, and connecting applications to a database.
+This internship gave me a strong foundation and increased my confidence to learn full-stack development further.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col md:flex-row gap-6">
+        <div class="flex items-center justify-center md:w-1/4">
+          <i class="fas fa-flask text-3xl text-blue-700"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg text-blue-700">Microsoft and LinkedIn</h4>
+          <p class="font-semibold text-gray-700">Data Analyst</p>
+          <p class="text-sm text-gray-600 mb-1">july - 2024</p>
+          <p class="text-gray-600">Completed an introductory certification program focused on the fundamentals of data analysis.
+Learned how to work with data using tools like Power BI, Excel, and basic analytical techniques.
+Gained hands-on experience in cleaning data, creating dashboards, and understanding simple data insights.
+This course helped me build a strong foundation in data analysis and improved my confidence in working with business data.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<!--internship section-->
+
+<!-- Achievements Section -->
+<section id="achievements" class="max-w-7xl mx-auto py-20 px-4 md:px-8">
+  <h3 class="text-3xl font-bold mb-8 text-gray-800 text-center">Achievements</h3>
+
+  <div class="grid gap-8 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+
+    <!-- Achievement 1 -->
+    <div class="bg-white rounded-xl shadow-xl hover:scale-105 transform transition-all">
+      <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?auto=format&fit=crop&w=600&q=80"
+        class="rounded-t-xl h-40 w-full object-cover">
+
+      <div class="p-6">
+        <h4 class="font-bold text-xl mb-2 text-blue-700">Hackathon Winner</h4>
+        <p class="text-gray-600 mb-4"> Winner of a 24-Hour Hackathon on Web Development Using No- Code Tools, organized by
+ Brainovision Solutions India Pvt. Ltd. in collaboration with Santhiram Engineering College.</p>
+
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-lg text-sm">Wordpress</span>
+          <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-lg text-sm">Problem Solving</span>
+          <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-lg text-sm">Teamwork</span>
+        </div>
+
+        <!-- Certificate button -->
+        <a href="certificate1.pdf" download
+          class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800 inline-block">
+          <i class="fas fa-download mr-2"></i>Download Certificate
+        </a>
+      </div>
+    </div>
+
+    <!-- Achievement 2 -->
+    <div class="bg-white rounded-xl shadow-xl hover:scale-105 transform transition-all">
+      <img src="drawing.png"
+        class="rounded-t-xl h-40 w-full object-cover">
+
+      <div class="p-6">
+        <h4 class="font-bold text-xl mb-2 text-blue-700">Painting Competition</h4>
+        <p class="text-gray-600 mb-4"> Won Second Prize in Painting Competition at the 12 National Level Technical Symposium
+ (Sigma 2k23) at Santhiram Engineering College.</p>
+
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-lg text-sm">Graphite pencils</span>
+          <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-lg text-sm">creativity</span>
+          <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-lg text-sm">chart sheets</span>
+        </div>
+
+        <a href="certificate2.pdf" download
+          class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800 inline-block">
+          <i class="fas fa-download mr-2"></i>Download Certificate
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!--contact section-->
+  <section id="contact" class="max-w-2xl mx-auto py-20 px-4">
+    <h3 class="text-3xl font-bold mb-8 text-gray-800 text-center">Contact Me</h3>
+
+    <form id="contact-form" class="bg-white rounded-xl shadow-lg p-8" autocomplete="off">
+      <div class="mb-6">
+        <label for="name" class="block text-gray-600 mb-2 font-semibold">Name</label>
+        <input type="text" id="name" name="name" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500" required>
+      </div>
+      <div class="mb-6">
+        <label for="email" class="block text-gray-600 mb-2 font-semibold">Email</label>
+        <input type="email" id="email" name="email" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500" required>
+      </div>
+      <div class="mb-6">
+        <label for="message" class="block text-gray-600 mb-2 font-semibold">Message</label>
+        <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500" required></textarea>
+      </div>
+
+      <button type="submit" class="w-full bg-blue-700 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-800">
+        Send Message
+      </button>
+
+      <p id="form-message" class="mt-4 text-center font-semibold"></p>
+    </form>
+
+    <div class="mt-8 text-center text-gray-600">
+      <div><i class="fas fa-envelope mr-2"></i>22x51a3225@srecnandyal.edu.in</div>
+      <div><i class="fas fa-map-marker-alt mr-2"></i> Nandyal, Andhra Pradesh, India</div>
+      <div><i class="fas fa-phone-alt mr-2"></i> +91 6281452***</div>
+
+      <div class="flex gap-5 justify-center mt-5 text-2xl">
+        <a href="https://github.com/Tarun25-dev" class="hover:text-blue-700"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/Tarun25-dev" class="hover:text-blue-700"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/TarunKumar_Cs?t=qH5rwMIDQa6DITY4jnchQA&s=09" class="hover:text-blue-700"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </section>
+<!--contact section-->
+  <!-- Footer -->
+  <footer class="bg-blue-700 text-white py-6 mt-16">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-4">
+      <div>© <span id="year"></span> TK. All Rights Reserved.</div>
+
+      <div class="flex gap-6 text-xl">
+        <a href="https://github.com/Tarun25-dev" class="hover:text-blue-300"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/Tarun25-dev" class="hover:text-blue-300"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/TarunKumar_Cs?t=qH5rwMIDQa6DITY4jnchQA&s=09" class="hover:text-blue-300"><i class="fab fa-twitter"></i></a>
+        <a href="#home" class="hover:text-blue-300"><i class="fas fa-arrow-up"></i></a>
+      </div>
+    </div>
+  </footer>
+    <script>
+    // Update year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function () {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 1) {
+        nav.classList.add('shadow-lg');
+        nav.classList.add('bg-white/80');
+        nav.classList.remove('bg-white/60');
+      } else {
+        nav.classList.remove('shadow-lg');
+        nav.classList.remove('bg-white/80');
+        nav.classList.add('bg-white/60');
+      }
+    });
+
+    // Hamburger toggle
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          window.scroll({
+            top: target.offsetTop - 68,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // EmailJS
+    emailjs.init("Tl3dg7KDdm_J-ZdfV"); //public key
+
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const msg = document.getElementById('form-message');
+
+      emailjs.sendForm('service_bt705ys', 'template_ydwtm6t', this) //service id and template id
+        .then(() => {
+          msg.textContent = "Message sent successfully!";
+          msg.className = "mt-4 text-green-700 font-semibold";
+          this.reset();
+        }, () => {
+          msg.textContent = "Sending failed. Try again.";
+          msg.className = "mt-4 text-red-700 font-semibold";
+        });
+    });
+  </script>
+</body>
+</html>
