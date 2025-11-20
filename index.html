@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Tharun kumar - Portfol  io</title>
+  <title>Tharun kumar - Portfolio</title>
 
 <link rel="icon" type="image/svg+xml"
 href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Crect width='100%25' height='100%25' rx='40' ry='40' fill='%230069ff'/%3E%3Ctext x='50%25' y='55%25' font-size='140' fill='white' font-family='Arial' text-anchor='middle' dominant-baseline='middle'%3ETK%3C/text%3E%3C/svg%3E">
@@ -14,7 +14,7 @@ href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' h
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap">
 
   <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -30,6 +30,16 @@ href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' h
       0% { opacity: 0; transform: translateY(25px); }
       100% { opacity: 1; transform: translateY(0); }
     }
+    .skill-badge {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-badge:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+            transform: scale(1.05);
+        }
     .fadeSlide {
       animation: fadeSlide 1s ease-out forwards;
     }
@@ -90,6 +100,11 @@ href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' h
 <!--Hero section-->
   <section id="home" class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white px-6 py-20">
   <!--br means bottom to right have background gardient start with blue and end with pink and though purple color, px,py is for padding x refers to left and right and y refers to top and bottom-->
+  <div class="mb-6">
+      <img src="image.png" 
+           alt="Profile Photo" 
+           class="w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-white shadow-xl object-cover">
+  </div>
   <p class="text-lg md:text-xl mb-3 opacity-90 text-center">Welcome to my portfolio</p>
   <!--text lg means large text(18px) md refers to medium screens has text-xl refers to extra large(20px) and margin bottom has 3px,opacity has 90 which makes more visible-->
   <h1 class="text-5xl md:text-6xl font-extrabold mb-3 text-center">Tharun Kumar</h1>
@@ -109,105 +124,148 @@ href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' h
   </div>
   </section>
 <!--Hero section-->
-<!--about section-->
-<section id="about" class="py-20 px-6">
-  <div class="max-w-6xl mx-auto">
-  
-    <div class="grid grid-cols-1 md:grid-cols-10 gap-8 items-center">
-
-      
-      <div class="md:col-span-3 flex justify-center md:justify-start">
-        <img
-          src="image.png"
-          alt="Profile Photo"
-          class="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover shadow-xl border-4 border-blue-200"
-        />
-        
-      </div>
-
-      <!-- CONTENT (70% on md+) -->
-      <div class="md:col-span-7 space-y-5">
-        <h3 class="text-3xl md:text-4xl font-bold text-gray-900">About Me</h3>
-
-        <p class="text-gray-700 text-base md:text-lg leading-relaxed">
-          I’m a passionate Full Stack Developer focused on building responsive,
-          user-friendly, and clean digital experiences. I believe in writing
-          efficient, maintainable code and bringing ideas to life through modern
-          technologies and thoughtful design.
-        </p>
-
-        <!-- SKILLS TITLE -->
-        <h4 class="text-lg font-semibold text-gray-900 mt-2">Skills</h4>
-
-  
-        <div class="flex flex-wrap gap-3 mt-2">
-          <span class="skill-pill"><i class="fa-brands fa-java text-red-600"></i> Java</span>
-          <span class="skill-pill"><i class="fa-brands fa-html5 text-orange-600"></i> HTML5</span>
-          <span class="skill-pill"><i class="fa-brands fa-css3-alt text-blue-600"></i> CSS3</span>
-          <span class="skill-pill"><i class="fa-brands fa-js text-yellow-500"></i> JavaScript</span>
-          <span class="skill-pill"><i class="fa-solid fa-database text-blue-700"></i> SQL</span>
-          <span class="skill-pill"><i class="fa-solid fa-leaf text-green-700"></i> MongoDB</span>
-          <span class="skill-pill"><i class="fa-brands fa-git-alt text-red-500"></i> Git</span>
-          <span class="skill-pill"><i class="fa-brands fa-github text-black"></i> GitHub</span>
-          <span class="skill-pill"><i class="fa-solid fa-wind text-blue-500"></i> Tailwind CSS</span>
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+                About <span class="gradient-text">Me</span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="section-reveal">
+                    <div class="bg-gradient-to-br from-purple-100 to-blue-100 rounded-2xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Education Background</h3>
+                        <div class="space-y-6">
+                            <div class="timeline-item relative pl-6">
+                                <h4 class="font-semibold text-lg text-gray-900">Computer Science &amp; Engineering</h4>
+                                <p class="text-purple-600 font-medium">Santhiram Engineering College (SREC), Nandyal</p>
+                                <p class="text-gray-600">2022 – 2026</p>
+                            </div>
+                            <div class="timeline-item relative pl-6">
+                                <h4 class="font-semibold text-lg text-gray-900">MPC – Board of Intermediate</h4>
+                                <p class="text-purple-600 font-medium">Rao's Jr. College, Nandyal</p>
+                                <p class="text-gray-600">2019 – 2021</p>
+                            </div>
+                            <div class="timeline-item relative pl-6">
+                                <h4 class="font-semibold text-lg text-gray-900">SSC – AP State Board</h4>
+                                <p class="text-purple-600 font-medium">Master Public High School, Nandyal</p>
+                                <p class="text-gray-600">2018 – 2019</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-reveal">
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        I'm a passionate Full Stack Developer focused on building responsive, user-friendly, and clean digital experiences. 
+                        I believe in writing efficient, maintainable code and bringing ideas to life through modern technologies and thoughtful design.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Clean Code Advocate</h4>
+                                <p class="text-gray-600">Writing maintainable, scalable, and efficient code</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Fast Learner</h4>
+                                <p class="text-gray-600">Quickly adapting to new technologies and frameworks</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Team Player</h4>
+                                <p class="text-gray-600">Collaborating effectively with cross-functional teams</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!--About section-->
-
-<!--education section-->
-<!-- EDUCATION (aligned under description) -->
-<section class="py-6 px-6">
-  <div class="max-w-6xl mx-auto">
+    </section>
     
-    <div class="grid grid-cols-1 md:grid-cols-10">
-      
-      <!-- Empty space equal to image column (3/10) -->
-      <div class="hidden md:block md:col-span-3"></div>
+<!-- Skills Section -->
+<section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-purple-50">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+            My <span class="gradient-text">Skills</span>
+        </h2>
 
-      <!-- Education card matches right-side width (7/10) -->
-      <div class="md:col-span-7">
-        <div class="bg-white shadow-xl rounded-2xl p-8 border border-gray-100">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 section-reveal">
 
-          <h2 class="text-2xl font-bold text-gray-900 mb-6">🎓 Education</h2>
-
-          <div class="space-y-6">
-
-            <div class="border-l-4 border-blue-500 pl-4">
-              <h3 class="text-lg font-semibold text-gray-800">Bachelor of Technology (B.Tech)</h3>
-              <p class="text-gray-600">Computer Science & Engineering</p>
-              <p class="text-gray-500">Santhiram engineering college(SREC), Nandyal.</p>
-              <p class="font-medium text-gray-800">2022 – 2026</p>
+            <!-- Java -->
+            <div class="skill-badge rounded-xl p-6 text-center card-hover bg-white">
+                <i class="fa-brands fa-java text-red-600 text-4xl mb-3"></i>
+                <h3 class="font-semibold text-gray-900">Java</h3>
             </div>
 
-            <div class="border-l-4 border-blue-500 pl-4">
-              <h3 class="text-lg font-semibold text-gray-800">Intermediate / 12th Standard</h3>
-              <p class="text-gray-600">MPC – Board of Intermediate Education</p>
-              <p class="text-gray-500">Rao's Jr. college, Nandyal.</p>
-              <p class="font-medium text-gray-800">2019 – 2021</p>
+            <!-- HTML5 -->
+            <div class="skill-badge rounded-xl p-6 text-center card-hover bg-white">
+                <i class="fa-brands fa-html5 text-orange-600 text-4xl mb-3"></i>
+                <h3 class="font-semibold text-gray-900">HTML5</h3>
             </div>
 
-            <div class="border-l-4 border-blue-500 pl-4">
-              <h3 class="text-lg font-semibold text-gray-800">10th Standard (SSC)</h3>
-              <p class="text-gray-600">AP State Board</p>
-              <p class="text-gray-500">Master Public High School, Nandyal.</p>
-              <p class="font-medium text-gray-800">2018 – 2019</p>
+            <!-- CSS3 -->
+            <div class="skill-badge rounded-xl p-6 text-center card-hover bg-white">
+                <i class="fa-brands fa-css3-alt text-blue-600 text-4xl mb-3"></i>
+                <h3 class="font-semibold text-gray-900">CSS3</h3>
             </div>
 
-          </div>
+            <!-- JavaScript -->
+            <div class="skill-badge rounded-xl p-6 text-center card-hover bg-white">
+                <i class="fa-brands fa-js text-yellow-500 text-4xl mb-3"></i>
+                <h3 class="font-semibold text-gray-900">JavaScript</h3>
+            </div>
+
+            <!-- SQL -->
+            <div class="skill-badge rounded-xl p-6 text-center card-hover bg-white">
+                <i class="fa-solid fa-database text-blue-700 text-4xl mb-3"></i>
+                <h3 class="font-semibold text-gray-900">SQL</h3>
+            </div>
+
+            <!-- MongoDB -->
+            <div class="skill-badge rounded-xl p-6 text-center card-hover bg-white">
+                <i class="fa-solid fa-leaf text-green-700 text-4xl mb-3"></i>
+                <h3 class="font-semibold text-gray-900">MongoDB</h3>
+            </div>
+
+            <!-- Git -->
+            <div class="skill-badge rounded-xl p-6 text-center card-hover bg-white">
+                <i class="fa-brands fa-git-alt text-red-500 text-4xl mb-3"></i>
+                <h3 class="font-semibold text-gray-900">Git</h3>
+            </div>
+
+            <!-- GitHub -->
+            <div class="skill-badge rounded-xl p-6 text-center card-hover bg-white">
+                <i class="fa-brands fa-github text-black text-4xl mb-3"></i>
+                <h3 class="font-semibold text-gray-900">GitHub</h3>
+            </div>
+
+            <!-- Tailwind CSS -->
+            <div class="skill-badge rounded-xl p-6 text-center card-hover bg-white">
+                <i class="fa-solid fa-wind text-blue-500 text-4xl mb-3"></i>
+                <h3 class="font-semibold text-gray-900">Tailwind CSS</h3>
+            </div>
 
         </div>
-      </div>
-
     </div>
-
-  </div>
 </section>
 
-<!--education section-->
-
+    
 <!--projects section-->
   <section id="projects" class="max-w-7xl mx-auto py-20 px-4 md:px-8">
     <h3 class="text-3xl font-bold mb-8 text-gray-800 text-center">Projects</h3>
@@ -232,8 +290,8 @@ This portfolio helps present my professional journey in a structured and visuall
           </div>
 
           <div class="flex gap-3">
-            <a href="https://github.com/Tarun25-dev/portfolio.git" class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800">GitHub</a>
-            <a href="https://tarun25-dev.github.io/portfolio/" class="bg-gray-100 text-blue-700 px-4 py-2 rounded hover:bg-blue-50">Live Demo</a>
+            <a href="#" class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800">GitHub</a>
+            <a href="#" class="bg-gray-100 text-blue-700 px-4 py-2 rounded hover:bg-blue-50">Live Demo</a>
           </div>
         </div>
       </div>
@@ -261,8 +319,8 @@ This project was developed as part of the SmartInternz Virtual Internship,</p>
           </div>
 
           <div class="flex gap-3">
-            <a href="https://github.com/Tarun25-dev/Smart-sorting.git" class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800">GitHub</a>
-        
+            <a href="#" class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800">GitHub</a>
+            <a href="#" class="bg-gray-100 text-blue-700 px-4 py-2 rounded hover:bg-blue-50">Live Demo</a>
           </div>
         </div>
       </div>
@@ -395,32 +453,38 @@ This course helped me build a strong foundation in data analysis and improved my
       <p id="form-message" class="mt-4 text-center font-semibold"></p>
     </form>
 
-    <div class="mt-8 text-center text-gray-600">
-      <div><i class="fas fa-envelope mr-2"></i>22x51a3225@srecnandyal.edu.in</div>
-      <div><i class="fas fa-map-marker-alt mr-2"></i> Nandyal, Andhra Pradesh, India</div>
-      <div><i class="fas fa-phone-alt mr-2"></i> +91 6281452***</div>
+    <div class="flex justify-center gap-6 mt-12">
+                <a href="https://github.com/Tarun25-dev" class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="https://linkedin.com/in/Tarun25-dev" class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+                <a href="https://x.com/TarunKumar_Cs?t=qH5rwMIDQa6DITY4jnchQA&s=09" class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                    </svg>
+                </a>
+                <a href="#home" class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                         <path fill-rule="evenodd" d="M3.293 9.707a1 1 0 011.414 0L9 7.414V17a1 1 0 102 0V7.414l4.293 2.293a1 1 0 001.414-1.414l-6-6a1 1 0 00-1.414 0l-6 6a1 1 0 010 1.414z" clip-rule="evenodd"></path>
+                    </svg>
+</a>
 
-      <div class="flex gap-5 justify-center mt-5 text-2xl">
-        <a href="https://github.com/Tarun25-dev" class="hover:text-blue-700"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/Tarun25-dev" class="hover:text-blue-700"><i class="fab fa-linkedin"></i></a>
-        <a href="https://x.com/TarunKumar_Cs?t=qH5rwMIDQa6DITY4jnchQA&s=09" class="hover:text-blue-700"><i class="fab fa-twitter"></i></a>
-      </div>
-    </div>
+            </div>
   </section>
 <!--contact section-->
-  <!-- Footer -->
-  <footer class="bg-blue-700 text-white py-6 mt-16">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-4">
-      <div>© <span id="year"></span> TK. All Rights Reserved.</div>
-
-      <div class="flex gap-6 text-xl">
-        <a href="https://github.com/Tarun25-dev" class="hover:text-blue-300"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/Tarun25-dev" class="hover:text-blue-300"><i class="fab fa-linkedin"></i></a>
-        <a href="https://x.com/TarunKumar_Cs?t=qH5rwMIDQa6DITY4jnchQA&s=09" class="hover:text-blue-300"><i class="fab fa-twitter"></i></a>
-        <a href="#home" class="hover:text-blue-300"><i class="fas fa-arrow-up"></i></a>
-      </div>
-    </div>
-  </footer>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 px-4">
+        <div class="max-w-7xl mx-auto text-center"><span id="year"></span>
+            <p class="text-gray-400">&copy; 2025 Portfolio. All rights reserved.</p>
+            <p class="text-gray-500 mt-2">Built with ❤️ using HTML, TailwindCSS, and JavaScript</p>
+        </div>
+    </footer>
     <script>
     // Update year
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -444,19 +508,22 @@ This course helped me build a strong foundation in data analysis and improved my
       document.getElementById('mobile-menu').classList.toggle('hidden');
     });
 
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          window.scroll({
-            top: target.offsetTop - 68,
-            behavior: 'smooth'
-          });
-        }
+    //for smooth animation
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function (e) {
+    const target = document.querySelector(this.getAttribute('href'));
+
+    if (target) {
+      e.preventDefault();
+
+      // Smooth scroll
+      window.scrollTo({
+        top: target.offsetTop - 68,
+        behavior: "smooth"
       });
-    });
+    }
+  });
+});
 
     // EmailJS
     emailjs.init("Tl3dg7KDdm_J-ZdfV"); //public key
@@ -478,9 +545,3 @@ This course helped me build a strong foundation in data analysis and improved my
   </script>
 </body>
 </html>
-
-
-
-
-
-
