@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Academic Performance Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #1b6ec2;
+            color: white;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .dashboard-section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(580px, 1fr));
+            gap: 25px;
+        }
+
+        .image-card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .image-card p {
+            margin-top: 12px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        @media (max-width: 600px) {
+            .dashboard-section {
+                padding: 20px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Academic Performance Dashboard</h1>
+    <p>A visual overview of semester-wise performance</p>
+</header>
+
+<section class="dashboard-section">
+    <div class="image-grid">
+
+        <div class="image-card">
+            <img src="../credit_weighted_numpy.png" alt="Semester Percentage">
+            <h2>Credit-Weighted Academic Performance</h2>
+            <p>Analyzed overall academic performance using credit-weighted averaging with NumPy dot product, giving higher importance to high-credit subjects for a realistic performance evaluation.</p>
+        </div>
+
+        <div class="image-card">
+            <img src="../improvement_rate.png" alt="SGPA Comparison">
+            <h2>Semester-to-Semester Improvement Rate</h2>
+            <p>Measured academic progress across semesters using NumPy difference to identify improvement and decline trends over time.</p>
+        </div>
+
+        <div class="image-card">
+            <img src="../consistency.png" alt="CGPA Trend">
+            <h2>Performance Consistency Analysis</h2>
+            <p>Evaluated performance consistency by calculating semester-wise standard deviation, showing stability and variation in academic results.</p>
+        </div>
+
+        <div class="image-card">
+            <img src="../percentage_comparision.png" alt="Subject Strength">
+            <h2>Semester Performance Comparison</h2>
+            <p>Compared overall semester performance using visual bar charts to highlight growth patterns and relative academic strength across semesters.</p>
+        </div>
+
+        <div class="image-card">
+            <img src="../practical_vs_theoretical.png" alt="Theory vs Lab">
+            <h2>Practical vs Theoretical Subject Performance</h2>
+            <p>Compared average scores in practical and theoretical subjects, revealing stronger performance in lab-based practical courses.</p>
+        </div>
+
+        <div class="image-card">
+            <img src="../top_subjects.png" alt="Credit Distribution">
+            <h2>Top Performing Subjects</h2>
+            <p>Identified top-performing subjects using NumPy sorting and Pandas aggregation to highlight academic strengths.</p>
+        
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>
